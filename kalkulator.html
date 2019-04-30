@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Kalkulator</title>
+</head>
+<body>
+    <h1>KALKULATOR</h1>
+    <div class="wrapper">
+        <div>Hasil</div>
+        <input type="text" disabled value="0">
+        <button>=</button>
+        <input type="number" placeholder="Number 1">
+        <select>
+            <option>+</option>
+            <option>-</option>
+            <option>x</option>
+            <option>/</option>
+        </select>
+        <input type="number" placeholder="Number 2">
+        <button>C</button>
+        
+    </div>
+
+    <script>
+    
+    
+    var hasil, input1, input2, operator, btnHasil, btnReset;
+    hasil = document.querySelectorAll("input")[0];
+    input1 = document.querySelectorAll("input")[1];
+    input2 = document.querySelectorAll("input")[2];
+    operator = document.querySelectorAll("select")[0];
+    btnHasil = document.querySelectorAll("button")[0];
+    btnReset = document.querySelectorAll("button")[1];
+    function hitung(){
+        if( operator.value === "+"){
+            hasil.value = Number(input1.value) + Number(input2.value);
+        }else if( operator.value === "-"){
+            hasil.value = Number(input1.value) - Number(input2.value);
+        }else if( operator.value === "x"){
+            hasil.value = Number(input1.value) * Number(input2.value);
+        }else if( operator.value === "/"){
+            hasil.value = Number(input1.value) / Number(input2.value);
+        }
+    }
+    function reset(){
+        hasil.value = 0;
+        input1.value = 0;
+        input2.value = 0;
+    }
+    btnHasil.addEventListener("click", hitung);
+    btnReset.addEventListener("click", reset);
+    
+    </script>
+</body>
+</html>
+</body>
+</html>
